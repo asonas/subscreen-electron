@@ -9,11 +9,26 @@ const Twitter = require('twitter')
 const io = require('socket.io-client')('http://localhost:3000');
 
 app.on('ready', () => {
-  let mainWindow = new BrowserWindow({
-    "frame"       : false,
-    "alwaysOnTop" : true,
-    "transparent" : true
-  });
+  let displays = electron.screen.getAllDisplays()
+  let externalDisplay = displays.find((display) => {
+    return display.bounds.x !== 0 || display.bounds.y !== 0
+  })
+
+  if (externalDisplay) {
+    var mainWindow = new BrowserWindow({
+      "x": externalDisplay.bounds.x + 50,
+      "y": externalDisplay.bounds.y + 50,
+      "frame"       : false,
+      "alwaysOnTop" : true,
+      "transparent" : true
+    })
+  } else {
+     var mainWindow = new BrowserWindow({
+      "frame"       : false,
+      "alwaysOnTop" : true,
+      "transparent" : true
+    });
+  }
 
   mainWindow.top = 0;
   mainWindow.left = 0;
