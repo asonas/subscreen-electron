@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>subscreen-electron</title>
+    <script>
+window.addEventListener('load', function() {
+  const nicoJS = require('nicojs');
+  let nico = new nicoJS({
+    app       : document.getElementById('app'),
+    width     : 1920,
+    height    : 1080,
+    font_size : 50,     // opt
+    color     : '#fff'  // opt
+  })
+  nico.listen();
+
+  nico.send('Hello World.');
+}, false);
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
