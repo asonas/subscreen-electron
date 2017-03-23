@@ -28,17 +28,4 @@ app.on('ready', () => {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
-
-  function getConfig() {
-    let config;
-
-    try {
-      const file = fs.readFileSync(config_path);
-      config = JSON.parse(file);
-    } catch(e) {
-      config = {notificationMode: 'never'};
-    }
-
-    return config;
-  }
 });
