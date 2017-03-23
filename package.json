@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "main": "main.js",
   "dependencies": {
-    "nicojs": "^1.1.6",
     "socket.io": "^1.7.3",
     "twitter": "^1.7.0"
   }

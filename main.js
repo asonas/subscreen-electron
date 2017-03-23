@@ -15,9 +15,6 @@ app.on('ready', () => {
     "transparent" : true
   });
 
-  var size = electron.screen.getPrimaryDisplay().size;
-  mainWindow.width = size.width;
-  mainWindow.height = size.height;
   mainWindow.top = 0;
   mainWindow.left = 0;
   mainWindow.setIgnoreMouseEvents(true);
