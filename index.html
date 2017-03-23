@@ -6,6 +6,8 @@
     <script>
 window.addEventListener('load', function() {
   const nicoJS = require('nicojs');
+  const io = require('socket.io-client')('http://localhost:3000');
+
   let nico = new nicoJS({
     app       : document.getElementById('app'),
     width     : 1920,
@@ -15,7 +17,9 @@ window.addEventListener('load', function() {
   })
   nico.listen();
 
-  nico.send('Hello World.');
+  io.on('stream/tweet', function(data) {
+    nico.send(data.message);
+  });
 }, false);
     </script>
   </head>
