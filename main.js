@@ -38,12 +38,12 @@ app.on('ready', () => {
 
   var client = new Twitter(credentials);
   var stream = client.stream('statuses/filter', {
-    "track": "perfume" // Fix me
+    "track": "kosenconf" // Fix me
   });
   stream.on('data', (function(_this) {
     return function(event) {
       var data = {
-        "message": event.text,
+        "message": event.text.replace('#kosenconf', ''),
         "name": event.user.name,
         "icon_url": event.user.profile_image_url
       }
