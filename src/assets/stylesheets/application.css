@@ -1,10 +1,12 @@
 .comment {
   position: absolute;
   left: 100%;
+  z-index: 10;
+}
+.comment p {
+  color: #fff;
   white-space: nowrap;
   font-size: 60px;
-  color: #fff;
-  z-index: 10;
   text-shadow:2px 1px 14px #666;
 }
 .comment-container {

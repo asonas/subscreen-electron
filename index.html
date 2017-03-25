@@ -18,8 +18,10 @@ window.addEventListener('load', function() {
     }
 
     var div = document.createElement('div');
-    div.textContent = data.message;
+    var para = document.createElement('p')
+    para.textContent = data.message;
     div.classList.add('comment');
+    div.appendChild(para);
     container.appendChild(div);
 
     transition(div, {
@@ -31,6 +33,7 @@ window.addEventListener('load', function() {
   });
 }, false);
     </script>
+    <script src="src/assets/javascripts/midi.js"></script>
   </head>
   <body>
     <div id="app">
